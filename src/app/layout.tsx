@@ -1,18 +1,44 @@
 import "@/app/globals.css"
 import { Navbar } from "@/components/common/Navbar"
 import { Footer } from "@/components/common/Footer"
+import type { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Queen’s Public Health Brigades",
-  description: "Conference, competition, and community in public health.",
+  description:
+    "Official website of Queen’s Public Health Brigades — promoting public health awareness through our annual conference and case competition.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Queen’s Public Health Brigades",
+    description:
+      "Join the QPHB conference and case competition to connect with leaders in global health.",
+    url: "https://qphb.ca",
+    siteName: "Queen’s Public Health Brigades",
+    images: [
+      {
+        url: "/images/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "QPHB Conference 2025",
+      },
+    ],
+    locale: "en_CA",
+    type: "website",
+  },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-white text-gray-900">
+      <body className="font-sans bg-white text-gray-900 antialiased">
         <Navbar />
-        <main className="pt-16">{children}</main>
+        <main className="min-h-[calc(100vh-10rem)] pt-16">{children}</main>
         <Footer />
       </body>
     </html>
