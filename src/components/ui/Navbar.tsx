@@ -2,46 +2,65 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-} from "@/components/ui/sheet"
+import { useEffect, useState } from "react"
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { Info, CalendarClock, Users, HeartHandshake, Phone } from "lucide-react"
 
 export function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Conference", href: "/conference" },
-    { label: "Team", href: "/team" },
+    { label: "OUR STORY", href: "/about", icon: Info },
+    { label: "CONFERENCE", href: "/conference", icon: CalendarClock },
+    { label: "OUR TEAM", href: "/team", icon: Users },
+    { label: "BRIGADE", href: "/brigade", icon: HeartHandshake },
+    { label: "CONTACT", href: "/contact", icon: Phone },
   ]
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        {/* Brand */}
-        <Link
-          href="/"
-          className="text-lg font-semibold text-primary hover:text-accent transition-colors"
-        >
-          QPHB
-        </Link>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 border-b ${
+        scrolled ? "border-border shadow-sm" : "border-transparent"
+      } bg-white transition-shadow`}
+    >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:h-[110px] md:py-0">
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex gap-6 text-sm">
+        {/* Logo section */}
+        <div className="flex items-center gap-3">
+          <Image
+            src="/qphb_logo.png" // replace with your logo asset
+            alt="QPHB logo"
+            width={204}
+            height={64}
+            className="object-contain w-[140px] sm:w-[170px] lg:w-[204px] h-auto"
+          />
+        </div>
+
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex gap-8 items-center text-[0.8rem] tracking-widest font-semibold">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`transition-colors hover:text-accent ${
+              className={`uppercase transition-colors ${
                 pathname === item.href
-                  ? "text-primary font-medium"
-                  : "text-foreground/80"
+                  ? "text-primary font-extrabold"
+                  : "text-accent hover:text-secondary transition-color duration-250 font-bold"
               }`}
             >
               {item.label}
@@ -49,36 +68,71 @@ export function Navbar() {
           ))}
         </div>
 
+        {/* CTA Buttons */}
+        <div className="hidden lg:flex items-center gap-3">
+          <Button
+            variant="ghost"
+          >
+            Join a Brigade
+          </Button>
+
+          <Button
+            variant="default"
+          >
+            Donate Now
+          </Button>
+        </div>
+
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                size="sm"
-                aria-label="Toggle navigation"
+                aria-label="Toggle menu"
+                className="w-12 h-12 text-2xl rounded-full"
               >
                 ☰
               </Button>
             </SheetTrigger>
 
-            <SheetContent side="right" className="w-64">
-              <nav className="mt-8 flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={`px-2 py-1 text-sm transition-colors ${
-                      pathname === item.href
-                        ? "text-primary font-medium"
-                        : "text-foreground/80 hover:text-accent"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+            <SheetContent side="right" className="w-80 pt-16">
+              {/* Nav Items */}
+              <nav className="flex flex-col gap-4 pl-4 text-sm font-bold tracking-[0.18em]">
+                {navItems.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={`uppercase pr-2 py-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors ${
+                        pathname === item.href
+                          ? "text-primary font-extrabold"
+                          : "text-accent hover:text-secondary transition-color duration-250 font-bold"
+                      }`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <Icon
+                          className="size-4 text-accent"
+                          aria-hidden="true"
+                        />
+                        <span>{item.label}</span>
+                      </span>
+                    </Link>
+                  )
+                })}
               </nav>
+
+              {/* CTA Buttons */}
+              <div className="mt-8 flex flex-col items-center gap-3">
+                <Button variant="outline" className="w-[90%]">
+                  Join a Brigade
+                </Button>
+                <Button variant="default" className="w-[90%]">
+                  Donate Now
+                </Button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>

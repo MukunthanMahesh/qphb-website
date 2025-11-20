@@ -9,19 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        default:
+          "uppercase tracking-[0.10em] text-[14px] font-bold text-white rounded-[24px] bg-gradient-to-r from-[var(--secondary)] via-[var(--primary)] to-[var(--accent-dark)] shadow-[0_8px_20px_rgba(0,0,0,0.16)] transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
+       outline:
+          "uppercase tracking-[0.10em] text-[14px] font-bold text-[var(--primary)] border-2 border-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-colors duration-150 ease-out hover:bg-[var(--secondary)]/10 hover:border-[var(--accent-dark)] hover:text-[var(--accent-dark)] active:bg-[var(--secondary)]/20",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+          "uppercase tracking-[0.10em] text-[14px] font-bold text-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "px-5 py-5 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
