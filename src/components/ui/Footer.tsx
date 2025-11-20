@@ -15,14 +15,14 @@ export function Footer() {
           />
         </div>
 
-        <p className="text-center text-[11px] tracking-[0.18em] uppercase text-accent md:flex-2 md:text-center">
+        <p className="font-medium text-center text-[11px] tracking-[0.18em] uppercase text-accent md:flex-2 md:text-center">
           © {new Date().getFullYear()} Queen’s Public Health Brigades.
         </p>
 
         <div className="flex items-center gap-5 text-[11px] tracking-[0.18em] uppercase md:flex-1 md:justify-end">
           <a
             href="mailto:qphb@queensu.ca"
-            className="hover:text-primary transition-colors"
+            className="font-medium hover:text-primary transition-colors"
           >
             Contact
           </a>
