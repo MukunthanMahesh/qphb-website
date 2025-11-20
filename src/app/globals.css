@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* --- Dark-mode variant setup --- */
-@custom-variant dark (&:is(.dark *));
-
 /* --- Inline variable map used by shadcn --- */
 @theme inline {
   --color-background: var(--background);
@@ -34,68 +31,47 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ===========================================================
-   ===============   LIGHT THEME (QPHB BRAND)   ===============
-   =========================================================== */
 :root {
   --radius: 0.625rem;
 
-  /* --- QPHB Brand Colors --- */
-  --primary: #196aa4;               /* GB Blue */
+  /* === QPHB Brand Colors (SEMANTICALLY CORRECT) === */
+
+  /* Primary = CTA Buttons */
+  --primary: #E7843C;
   --primary-foreground: #ffffff;
 
-  --secondary: #8b9da9;             /* Warm Gray */
-  --secondary-foreground: #ffffff;
+  /* Accent = Brown Headings / Special Text */
+  --accent: #795027;
+  --accent-foreground: #ffffff;
 
-  --accent: #f0b53f;                /* GB Gold */
-  --accent-foreground: #1a1a1a;
+  /* Secondary = Soft Tangerine (used as soft background tones) */
+  --secondary: #FAA54F;
+  --secondary-foreground: #1a1a1a;
 
-  /* --- Base surfaces / text --- */
+  /* Accent-dark = Supporting deep orange */
+  --accent-dark: #C76604;
+
+  /* === Base surfaces/text === */
   --background: #ffffff;
-  --foreground: #111827;
-  --card: #ffffff;
-  --card-foreground: #111827;
+  --foreground: #1a1a1a;
 
-  /* --- Neutrals --- */
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+
+  /* === Neutrals === */
+  --muted: #f5f5f4;
+  --muted-foreground: #737373;
+
   --border: #e5e7eb;
   --input: #e5e7eb;
   --ring: var(--primary);
 
-  /* --- Charts / accents (optional) --- */
-  --chart-1: #196aa4;
-  --chart-2: #f0b53f;
-  --chart-3: #8b9da9;
-  --chart-4: #2679b8;
-  --chart-5: #49a1d3;
-}
-
-/* ===========================================================
-   ===============   DARK THEME (QPHB BRAND)   ===============
-   =========================================================== */
-.dark {
-  --background: #111827;
-  --foreground: #f9fafb;
-
-  --card: #1f2937;
-  --card-foreground: #f9fafb;
-
-  --primary: #49a1d3;               /* Lighter blue for dark mode */
-  --primary-foreground: #ffffff;
-
-  --secondary: #8b9da9;
-  --secondary-foreground: #ffffff;
-
-  --accent: #f0b53f;
-  --accent-foreground: #1a1a1a;
-
-  --muted: #1f2937;
-  --muted-foreground: #9ca3af;
-
-  --border: #374151;
-  --input: #4b5563;
-  --ring: var(--primary);
+  /* === Charts (optional) === */
+  --chart-1: #E7843C;
+  --chart-2: #FAA54F;
+  --chart-3: #C76604;
+  --chart-4: #795027;
+  --chart-5: #E7A36D;
 }
 
 /* ===========================================================

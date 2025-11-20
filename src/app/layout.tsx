@@ -2,6 +2,13 @@ import "@/app/globals.css"
 import { Navbar } from "@/components/ui/Navbar"
 import { Footer } from "@/components/ui/Footer"
 import type { Metadata } from "next"
+import { Source_Sans_3 } from "next/font/google"
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+})
 
 export const metadata: Metadata = {
   title: "Queen’s Public Health Brigades",
@@ -35,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={sourceSans.variable}>
       <body className="font-sans bg-white text-gray-900 antialiased">
         <Navbar />
         <main className="min-h-[calc(100vh-10rem)] pt-16">{children}</main>
