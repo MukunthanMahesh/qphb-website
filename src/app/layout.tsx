@@ -45,9 +45,10 @@ export default function RootLayout({
     <html lang="en" className={sourceSans.variable}>
       <body className="font-sans bg-white text-gray-900 antialiased">
         <Navbar />
-        <main className="min-h-[calc(100vh-10rem)] pt-16">{children}</main>
+        <main className="pt-[64px] md:pt-[112px] min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-110px)]">{children}</main>
         <Footer />
       </body>
     </html>
   )
 }
+
