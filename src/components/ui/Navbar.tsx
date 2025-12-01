@@ -6,7 +6,14 @@ import { useEffect, useState } from "react"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { Info, CalendarClock, Users, HeartHandshake, Phone } from "lucide-react"
+import {
+  Info,
+  CalendarClock,
+  Users,
+  HeartHandshake,
+  Phone,
+  HandCoins,
+} from "lucide-react"
 
 export function Navbar() {
   const pathname = usePathname()
@@ -70,16 +77,18 @@ export function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button
-            variant="ghost"
-          >
-            Join a Brigade
+          <Button variant="ghost">
+            <span className="flex items-center gap-2">
+              <HeartHandshake className="size-4" aria-hidden="true" />
+              <span>Join a Brigade</span>
+            </span>
           </Button>
 
-          <Button
-            variant="default"
-          >
-            Donate Now
+          <Button variant="default">
+            <span className="flex items-center gap-2">
+              <HandCoins className="size-4" aria-hidden="true" />
+              <span>Donate Now</span>
+            </span>
           </Button>
         </div>
 
@@ -127,10 +136,16 @@ export function Navbar() {
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-col items-center gap-3">
                 <Button variant="outline" className="w-[90%]">
-                  Join a Brigade
+                  <span className="flex items-center justify-center gap-2">
+                    <HeartHandshake className="size-4" aria-hidden="true" />
+                    <span>Join a Brigade</span>
+                  </span>
                 </Button>
                 <Button variant="default" className="w-[90%]">
-                  Donate Now
+                  <span className="flex items-center justify-center gap-2">
+                    <HandCoins className="size-4" aria-hidden="true" />
+                    <span>Donate Now</span>
+                  </span>
                 </Button>
               </div>
             </SheetContent>

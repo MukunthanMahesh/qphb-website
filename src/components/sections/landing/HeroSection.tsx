@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="min-h-[900px] bg-background">
+    <section className="min-h-[790px] bg-background">
       <div className="w-full px-4">
         <div className="relative mx-auto flex h-[690px] max-w-[1408px] overflow-hidden rounded-[20px] bg-black">
           <video
