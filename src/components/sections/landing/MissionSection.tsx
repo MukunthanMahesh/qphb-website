@@ -37,7 +37,7 @@ export function MissionSection() {
               </h2>
 
               <p className="text-sm leading-relaxed text-foreground sm:text-base text-center md:text-left">
-                At Queen’s we are part of the Public Health Brigades — an
+                At Queen’s we are part of the Public Health Brigades — a local and
                 international movement of university students working to improve
                 health conditions in the developing world.
               </p>
