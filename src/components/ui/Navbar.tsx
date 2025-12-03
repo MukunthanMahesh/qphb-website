@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { animateScroll as scroll } from "react-scroll"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -31,6 +32,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleLogoClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (pathname === "/") {
+      event.preventDefault()
+      scroll.scrollToTop({
+        duration: 600,
+        smooth: "easeInOutQuad",
+      })
+    }
+  }
+
   const navItems = [
     { label: "OUR STORY", href: "/about", icon: Info },
     { label: "CONFERENCE", href: "/conference", icon: CalendarClock },
@@ -49,7 +62,7 @@ export function Navbar() {
 
         {/* Logo section */}
         <div className="flex items-center gap-3">
-          <a  href="/" className="flex items-center">
+          <Link href="/" onClick={handleLogoClick} className="flex items-center">
             <Image
               src="/qphb_logo.png" // replace with your logo asset
               alt="QPHB logo"
@@ -57,7 +70,7 @@ export function Navbar() {
               height={64}
               className="object-contain w-[140px] sm:w-[170px] lg:w-[204px] h-auto"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Nav */}
