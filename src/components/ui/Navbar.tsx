@@ -49,13 +49,15 @@ export function Navbar() {
 
         {/* Logo section */}
         <div className="flex items-center gap-3">
-          <Image
-            src="/qphb_logo.png" // replace with your logo asset
-            alt="QPHB logo"
-            width={204}
-            height={64}
-            className="object-contain w-[140px] sm:w-[170px] lg:w-[204px] h-auto"
-          />
+          <a  href="/" className="flex items-center">
+            <Image
+              src="/qphb_logo.png" // replace with your logo asset
+              alt="QPHB logo"
+              width={204}
+              height={64}
+              className="object-contain w-[140px] sm:w-[170px] lg:w-[204px] h-auto"
+            />
+          </a>
         </div>
 
         {/* Desktop Nav */}
