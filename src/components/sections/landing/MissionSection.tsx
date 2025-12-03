@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { HeartHandshake } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Tooltip } from "@/components/ui/tooltip"
 
 export function MissionSection() {
   return (
@@ -52,12 +53,14 @@ export function MissionSection() {
             </div>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
-              <Button variant="default">
-                <span className="flex items-center gap-2">
-                  <HeartHandshake className="size-4" aria-hidden="true" />
-                  <span>Join us</span>
-                </span>
-              </Button>
+              <Tooltip content="Registration has closed for the year">
+                <Button variant="default" disabled>
+                  <span className="flex items-center gap-2">
+                    <HeartHandshake className="size-4" aria-hidden="true" />
+                    <span>Join us</span>
+                  </span>
+                </Button>
+              </Tooltip>
               <Button variant="ghost" className="sm:ml-4">
                 Learn more →
               </Button>
