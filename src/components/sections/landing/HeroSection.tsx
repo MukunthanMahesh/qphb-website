@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="min-h-[790px] bg-background">
       <div className="w-full px-4">
-        <div className="relative mx-auto flex h-[690px] max-w-[1408px] overflow-hidden rounded-[20px] bg-black">
+        <div className="relative mx-auto flex h-[740px] md:h-[580px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black">
           <video
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
