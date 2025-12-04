@@ -58,7 +58,7 @@ export function ImpactSection() {
           {IMPACT_ITEMS.map(({ title, description, image }) => (
             <article
               key={title}
-              className="group flex flex-col overflow-hidden rounded-[24px] border border-border/40 bg-card shadow-[0px_20px_45px_rgba(15,23,42,0.08)]"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-border/40 bg-card shadow-[0px_20px_45px_rgba(15,23,42,0.08)]"
             >
               <div className="relative h-60 overflow-hidden bg-background-secondary">
                 <Image
