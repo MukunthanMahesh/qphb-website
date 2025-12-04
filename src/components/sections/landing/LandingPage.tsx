@@ -1,6 +1,7 @@
 import { HeroSection } from "./HeroSection"
 import { ImpactSection } from "./ImpactSection"
 import { MissionSection } from "./MissionSection"
+import { FeaturedEventSection } from "./FeaturedEventSection"
 
 export default function LandingPage() {
   return (
@@ -8,6 +9,7 @@ export default function LandingPage() {
       <HeroSection />
       <MissionSection />
       <ImpactSection />
+      <FeaturedEventSection />
     </>
   )
 }
