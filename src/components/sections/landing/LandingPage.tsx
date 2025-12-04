@@ -1,10 +1,15 @@
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder"
+import { HeroSection } from "./HeroSection"
+import { ImpactSection } from "./ImpactSection"
+import { MissionSection } from "./MissionSection"
+import { FeaturedEventSection } from "./FeaturedEventSection"
 
-export default function AboutPage() {
+export default function LandingPage() {
   return (
-    <PagePlaceholder
-      title="About Us"
-      description="Learn more about QPHB's mission, values, and initiatives."
-    />
+    <>
+      <HeroSection />
+      <MissionSection />
+      <ImpactSection />
+      <FeaturedEventSection />
+    </>
   )
 }

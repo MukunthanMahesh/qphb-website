@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "uppercase tracking-[0.10em] text-[14px] font-bold text-white rounded-[24px] bg-gradient-to-r from-[var(--secondary)] via-[var(--primary)] to-[var(--accent-dark)] shadow-[0_8px_20px_rgba(0,0,0,0.16)] transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
+          "uppercase tracking-[0.10em] font-bold text-white rounded-[24px] bg-gradient-to-r from-[var(--secondary)] via-[var(--primary)] to-[var(--accent-dark)] shadow-[0_8px_20px_rgba(0,0,0,0.16)] transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
        outline:
-          "uppercase tracking-[0.10em] text-[14px] font-bold text-[var(--primary)] border-2 border-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-colors duration-150 ease-out hover:bg-[var(--secondary)]/10 hover:border-[var(--accent-dark)] hover:text-[var(--accent-dark)] active:bg-[var(--secondary)]/20",
+          "uppercase tracking-[0.10em] font-bold text-[var(--primary)] border-2 border-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-colors duration-150 ease-out hover:bg-[var(--secondary)]/10 hover:border-[var(--accent-dark)] hover:text-[var(--accent-dark)] active:bg-[var(--secondary)]/20",
         ghost:
-          "uppercase tracking-[0.10em] text-[14px] font-bold text-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
+          "uppercase tracking-[0.10em] font-bold text-[var(--primary)] bg-transparent rounded-[24px] shadow-none transition-transform duration-250 ease-out hover:-translate-y-[3px] active:translate-y-0",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

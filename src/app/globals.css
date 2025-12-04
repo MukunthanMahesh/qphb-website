@@ -4,6 +4,7 @@
 /* --- Inline variable map used by shadcn --- */
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -53,7 +54,8 @@
 
   /* === Base surfaces/text === */
   --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background-secondary: #FFFAF4;
+  --foreground: #795027;
 
   --card: #ffffff;
   --card-foreground: #1a1a1a;
