@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button"
+import { HeartHandshake } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
   return (
     <section className="min-h-[790px] bg-background">
       <div className="w-full px-4">
-        <div className="relative mx-auto flex h-[740px] md:h-[580px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black">
+        <div className="relative mx-auto flex h-[740px] md:h-[670px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black">
           <video
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
@@ -31,8 +32,15 @@ export function HeroSection() {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button variant="default">Register for 2025</Button>
-              <Button variant="ghost">Explore the Conference</Button>
+              <Button variant="default" disabled>
+                <span className="flex items-center gap-2">
+                  <HeartHandshake className="size-4" aria-hidden="true" />
+                  <span>Join a Brigade</span>
+                </span>
+              </Button>
+              <Button variant="ghost">
+                Get Involved At Queen's
+              </Button>
             </div>
           </div>
         </div>
