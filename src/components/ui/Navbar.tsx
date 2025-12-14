@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { animateScroll as scroll } from "react-scroll"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import { Tooltip } from "@/components/ui/tooltip"
 import Image from "next/image"
 import {
   Info,
@@ -92,12 +93,14 @@ export function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="ghost">
-            <span className="flex items-center gap-2">
-              <HeartHandshake className="size-4" aria-hidden="true" />
-              <span>Join a Brigade</span>
-            </span>
-          </Button>
+          <Tooltip content="Coming Soon" side="bottom">
+            <Button variant="ghost" disabled>
+              <span className="flex items-center gap-2">
+                <HeartHandshake className="size-4" aria-hidden="true" />
+                <span>Join a Brigade</span>
+              </span>
+            </Button>
+          </Tooltip>
 
           <Button variant="default">
             <span className="flex items-center gap-2">
@@ -150,12 +153,14 @@ export function Navbar() {
 
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-col items-center gap-3">
-                <Button variant="outline" className="w-[90%]">
-                  <span className="flex items-center justify-center gap-2">
-                    <HeartHandshake className="size-4" aria-hidden="true" />
-                    <span>Join a Brigade</span>
-                  </span>
-                </Button>
+                <Tooltip content="Coming Soon" side="bottom">
+                  <Button variant="outline" className="w-[90%]" disabled>
+                    <span className="flex items-center justify-center gap-2">
+                      <HeartHandshake className="size-4" aria-hidden="true" />
+                      <span>Join a Brigade</span>
+                    </span>
+                  </Button>
+                </Tooltip>
                 <Button variant="default" className="w-[90%]">
                   <span className="flex items-center justify-center gap-2">
                     <HandCoins className="size-4" aria-hidden="true" />

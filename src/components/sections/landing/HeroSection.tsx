@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Tooltip } from "@/components/ui/tooltip"
 import { HeartHandshake } from "lucide-react"
 import Image from "next/image"
 
@@ -32,12 +33,14 @@ export function HeroSection() {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button variant="default" disabled>
-                <span className="flex items-center gap-2">
-                  <HeartHandshake className="size-4" aria-hidden="true" />
-                  <span>Join a Brigade</span>
-                </span>
-              </Button>
+              <Tooltip content="Coming Soon!" side="top">
+                <Button variant="default" disabled>
+                  <span className="flex items-center gap-2">
+                    <HeartHandshake className="size-4" aria-hidden="true" />
+                    <span>Join a Brigade</span>
+                  </span>
+                </Button>
+              </Tooltip>
               <Button variant="ghost">
                 Get Involved At Queen's
               </Button>
