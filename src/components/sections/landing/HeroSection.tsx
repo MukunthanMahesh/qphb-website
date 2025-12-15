@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
 import { HeartHandshake } from "lucide-react"
-import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -42,7 +41,7 @@ export function HeroSection() {
                 </Button>
               </Tooltip>
               <Button variant="ghost">
-                Get Involved At Queen's
+                Get Involved At Queen&apos;s
               </Button>
             </div>
           </div>

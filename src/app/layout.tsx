@@ -1,6 +1,6 @@
 import "@/app/globals.css"
-import { Navbar } from "@/components/ui/navbar"
-import { Footer } from "@/components/ui/footer"
+import { Navbar } from "@/components/ui/Navbar"
+import { Footer } from "@/components/ui/Footer"
 import type { Metadata } from "next"
 import { Source_Sans_3 } from "next/font/google"
 
