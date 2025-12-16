@@ -1,19 +1,34 @@
+'use client'
+
 import Image from "next/image"
 import { HeartHandshake } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
+import { motion } from "framer-motion"
 
 export function MissionSection() {
   return (
     <section className="min-h-[900px] bg-background-secondary pt-10 pb-14 md:pt-16 md:pb-20 flex flex-col">
       {/* Section Title */}
-      <div className="mx-auto text-center text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent">
+      <motion.div
+        className="mx-auto text-center text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         What we do
-      </div>
+      </motion.div>
 
       {/* Main content */}
       <div className="flex-1 flex items-center">
-        <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-10 px-6 md:gap-12 lg:flex-row lg:items-stretch lg:gap-16">
+        <motion.div
+          className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-10 px-6 md:gap-12 lg:flex-row lg:items-stretch lg:gap-16"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           {/* Left: Globe collage */}
           <div className="flex w-full justify-center lg:w-1/2 mt-8 lg:mt-0">
             <div className="relative h-auto max-w-[320px] sm:max-w-[420px] md:max-w-[520px]">
@@ -66,7 +81,7 @@ export function MissionSection() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

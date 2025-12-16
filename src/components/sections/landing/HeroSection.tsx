@@ -1,12 +1,21 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Tooltip } from "@/components/ui/tooltip"
 import { HeartHandshake } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
     <section className="min-h-[790px] bg-background">
       <div className="w-full px-4">
-        <div className="relative mx-auto flex h-[740px] md:h-[670px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black">
+        <motion.div
+          className="relative mx-auto flex h-[740px] md:h-[670px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <video
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
@@ -18,7 +27,13 @@ export function HeroSection() {
           </video>
 
           <div className="relative z-10 flex w-full flex-col justify-between bg-linear-to-r from-black/70 via-black/45 to-black/10 p-6 sm:p-10 md:p-16">
-            <div className="max-w-xl space-y-4 md:space-y-6 text-white">
+            <motion.div
+              className="max-w-xl space-y-4 md:space-y-6 text-white"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            >
               <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-secondary">
                 Queen’s Public Health Brigades
               </p>
@@ -29,9 +44,15 @@ export function HeroSection() {
                 A student-led community advancing health equity through our
                 annual conference, communty events, and global brigades.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <motion.div
+              className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.7 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            >
               <Tooltip content="Coming Soon!" side="top">
                 <Button variant="default" disabled>
                   <span className="flex items-center gap-2">
@@ -43,9 +64,9 @@ export function HeroSection() {
               <Button variant="ghost">
                 Get Involved At Queen&apos;s
               </Button>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

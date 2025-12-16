@@ -1,4 +1,6 @@
-"use client"
+'use client'
+
+import { motion } from "framer-motion"
 
 interface PagePlaceholderProps {
   title: string
@@ -8,13 +10,19 @@ interface PagePlaceholderProps {
 export function PagePlaceholder({ title, description }: PagePlaceholderProps) {
   return (
     <main className="flex flex-col items-center justify-center h-[70vh] text-center">
-      <h1 className="text-4xl font-bold text-primary">{title}</h1>
-      {description && (
-        <p className="mt-4 max-w-md text-muted-foreground">{description}</p>
-      )}
-      <p className="mt-6 text-sm text-muted-foreground">
-        (This page is under construction)
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <h1 className="text-4xl font-bold text-primary">{title}</h1>
+        {description && (
+          <p className="mt-4 max-w-md text-muted-foreground">{description}</p>
+        )}
+        <p className="mt-6 text-sm text-muted-foreground">
+          (This page is under construction)
+        </p>
+      </motion.div>
     </main>
   )
 }

@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const IMPACT_ITEMS = [
   {
@@ -42,7 +45,13 @@ const IMPACT_ITEMS = [
 export function ImpactSection() {
   return (
     <section className="bg-background py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <motion.div
+        className="mx-auto max-w-6xl px-6"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <div className="text-center">
           <p className="text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent">
             How we create impact
@@ -56,9 +65,13 @@ export function ImpactSection() {
 
         <div className="mt-12 grid gap-6 lg:gap-8 md:grid-cols-2">
           {IMPACT_ITEMS.map(({ title, description, image }) => (
-            <article
+            <motion.article
               key={title}
               className="group flex flex-col overflow-hidden rounded-3xl border border-border/40 bg-card shadow-[0px_20px_45px_rgba(15,23,42,0.08)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <div className="relative h-60 overflow-hidden bg-background-secondary">
                 <Image
@@ -79,10 +92,10 @@ export function ImpactSection() {
                   {description}
                 </p>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
