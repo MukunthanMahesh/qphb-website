@@ -21,7 +21,7 @@ export function Footer() {
 
         <div className="flex items-center gap-5 text-[11px] tracking-[0.18em] uppercase md:flex-1 md:justify-end">
           <a
-            href="mailto:qphb@queensu.ca"
+            href="/contact"
             className="font-medium hover:text-primary transition-colors"
           >
             Contact
