@@ -25,7 +25,7 @@ export default function ContactPage() {
     <section className="min-h-[790px] bg-background">
       <div className="w-full px-4">
         <motion.div
-          className="relative mx-auto flex min-h-[640px] md:min-h-[560px] max-w-[1408px] overflow-hidden rounded-[28px] bg-black"
+          className="relative mx-auto flex h-[740px] md:h-[670px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[28px] bg-black"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
