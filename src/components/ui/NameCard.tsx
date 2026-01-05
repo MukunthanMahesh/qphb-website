@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 interface NameCardProps {
   name: string;
@@ -25,11 +26,11 @@ export function NameCard({name, role, program, imagesrc} : NameCardProps) {
                     {name}
                     </p>
 
-                    <p className="font-bold text-sm leading-relaxed text-[#C76604]/90 sm:text-base text-center">
+                    <p className="font-bold text-sm leading-relaxed text-[#C76604]/100 sm:text-base text-center">
                     {role}
                     </p>
 
-                    <p className="font-normal text-sm text-gray-500 text-center">
+                    <p className="font-normal text-sm text-muted-foreground text-center">
                     {program}
                     </p>
                 </div>

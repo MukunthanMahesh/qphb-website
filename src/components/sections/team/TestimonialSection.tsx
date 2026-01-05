@@ -1,5 +1,8 @@
-import { TeamIntro } from "./TeamIntro"
-import Image from "next/image"  
+
+"use client"
+import Image from "next/image"
+import { useState } from "react"  
+import { motion } from "framer-motion"
 
 const PRESIDENTS = [
   {
@@ -20,34 +23,49 @@ const PRESIDENTS = [
   },
 ];
 
+
+
 export function TestimonialSection() {
+
+    const [expanded, setExpanded] = useState<Record<number, boolean>>({})
+
+    const getPreview = (text: string) => {
+        const sentences = text.split(/(?<=[.!?])\s+/)
+        return sentences.slice(0, 2).join(" ")
+  }
+
   return (
-    <section className="mx-auto max-w-full px-6 py-12 space-y-12 bg-background-secondary ">
+    <motion.section
+        className="mx-auto max-w-full px-6 py-12 space-y-12 bg-background-secondary"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        >
         <h1 className="text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent text-center">
             Testimonials
         </h1>
 
-        {/* TOP: image + question side by side */}
-        <div className="grid gap-10 md:grid-cols-2 items-start">
+        {/* centered image, then text below */}
+        <div className="flex flex-col items-center text-center gap-6">      
             <div className="rounded-3xl bg-[conic-gradient(at_center,_orange_0%,_#fff7ee_25%,_orange_50%,_#fff7ee_75%,_orange_100%)] p-[1px] shadow-lg">
-                <div className="relative overflow-hidden rounded-3xl bg-white">
+                <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
                     <Image
                     src="/images/exec-images/Pres.JPG"
                     alt="Co-Presidents group photo"
                     width={900}
                     height={500}
-                    className="object-cover"
+                    className="object-cover mx-auto"
                     />
                 </div>
             </div>
 
-            {/* TEXT */}
-            <div className="space-y-4 text-center md:text-left">
-                <h2 className="text-2xl font-bold text-[#795027]/100">
-                    Listen to what our presidents have to say
+            <div className="max-w-3xl space-y-4">
+                <h2 className="text-2xl font-bold text-foreground/100">
+                    Listen to what our presidents have to say. 
                 </h2>
 
-                <p className="text-base sm:text-lg font-medium leading-relaxed text-[#795027]/90">
+                <p className="text-base sm:text-lg font-medium leading-relaxed text-foreground/90">
                     Question: Short statement on the motivation behind being a
                     Co-President and what being a Co-President means to you!
                 </p>
@@ -77,13 +95,13 @@ export function TestimonialSection() {
                         </div>
 
                         <div className="space-y-0.5">
-                            <p className="text-base font-semibold text-[#795027]">
+                            <p className="text-base font-medium text-foreground/100">
                             {p.name}
                             </p>
-                            <p className="text-sm font-medium text-orange-600">
+                            <p className="text-sm font-bold text-primary/100">
                             {p.role}
                             </p>
-                            <p className="text-xs text-gray-500">
+                            <p className="text-xs text-muted-foreground">
                             {p.program}
                             </p>
                         </div>
@@ -94,13 +112,13 @@ export function TestimonialSection() {
                         className={`
                             relative
                             w-full
-                            bg-[#fff7ee]
-                            border border-orange-200
-                            p-6
+                            bg-secondary/30
+                            border-primary/100
+                            p-5
                             rounded-2xl
                             italic
                             leading-relaxed
-                            text-[#795027]/90
+                            text-foreground/100
                             shadow
 
                             after:content-['']
@@ -114,18 +132,34 @@ export function TestimonialSection() {
 
                             ${
                             i === 0
-                                ? "after:left-[-18px] after:border-r-[18px] after:border-r-orange-200"
-                                : "after:right-[-18px] after:border-l-[18px] after:border-l-orange-200"
+                                ? "after:left-[-18px] after:border-r-[18px] after:border-r-[#FAA54F]"
+                                : "after:right-[-18px] after:border-l-[18px] after:border-l-[#FAA54F]"
                             }
                         `}>
                             
-                        “{p.quote}”
+                        <span>
+                            {expanded[i] ? (
+                                <>“{p.quote}”</>
+                            ) : (
+                                <>“{getPreview(p.quote)} …”</>
+                            )}
+                        </span>
+
+                    <button
+                        type="button"
+                        onClick={() =>
+                            setExpanded(prev => ({ ...prev, [i]: !prev[i] }))
+                        }
+                        className="ml-2 text-primary font-xs hover:underline"
+                        >
+                        {expanded[i] ? "Show less" : "Read more"}
+                    </button>
                     </div>
                 </div>
             </div>
             ))}
         </div>
-    </section>
+    </motion.section>
 
   );
     };
