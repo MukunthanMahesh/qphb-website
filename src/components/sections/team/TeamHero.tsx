@@ -33,22 +33,25 @@ export function TeamHero() {
                 />
             </motion.div>
             <div className="text-center z-10 pb-0">
-                <motion.h1
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    className="text-[3rem] font-extrabold uppercase tracking-[0.25em] text-accent"
-                    >
-                    <span>MEET </span>
-                    <span className="text-transparent stroke-text relative">
-                        OUR
+                <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                <h1 className="text-[3rem] font-extrabold uppercase tracking-[0.25em] text-accent text-center">
+                    <span>MEET&nbsp;</span>
+
+                    {/* Make OUR definitely visible */}
+                    <span className="relative inline-block stroke-text text-accent">
+                    OUR&nbsp;
                     </span>
-                    <span className="relative">
-                        {" "}TEAM
-                        <span className="absolute left-0 right-0 -bottom-2 h-2 rounded-full bg-black/20 blur-sm" />
+
+                    <span className="relative inline-block">
+                     TEAM<span className="absolute left-0 right-0 -bottom-2 h-2 rounded-full bg-black/20 blur-sm" />
                     </span>
-                </motion.h1>
+                </h1>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 28 }}
