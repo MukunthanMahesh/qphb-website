@@ -1,10 +1,15 @@
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder"
+
+import { TeamHero } from "./TeamHero"
+import { TeamIntro } from "./TeamIntro"
+import {TestimonialSection} from "./TestimonialSection"
 
 export default function TeamPage() {
   return (
-    <PagePlaceholder
-      title="Meet the Team"
-      description="Our executive and sub-team members will be introduced here."
-    />
-  )
+      <>
+      <TeamHero />
+     
+      <TestimonialSection />  
+       <TeamIntro />  
+      </>
+    )
 }

@@ -88,7 +88,7 @@ export default function ContactPage() {
                   </p>
                   <div className="space-y-1 text-sm">
                     <a
-                      href="https://www.instagram.com/queensphb"
+                      href="https://www.instagram.com/queenspublichealthbrigades/"
                       target="_blank"
                       rel="noreferrer"
                       className="text-white/90 underline-offset-4 hover:text-secondary hover:underline"

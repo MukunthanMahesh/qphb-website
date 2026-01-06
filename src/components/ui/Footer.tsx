@@ -27,7 +27,7 @@ export function Footer() {
             Contact
           </a>
           <a
-            href="https://instagram.com/qphb"
+            href="https://www.instagram.com/queenspublichealthbrigades/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="QPHB on Instagram"
