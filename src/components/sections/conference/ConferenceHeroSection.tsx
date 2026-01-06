@@ -31,7 +31,7 @@ export function ConferenceHeroSection() {
           <div className="w-full max-w-xl lg:w-1/2 space-y-4 md:space-y-6 animate-fadeInUp">
             <h2 className="text-center text-accent text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight md:text-left">
               Global Brigades Annual Summit
-              <span className="text-primary"> 2025</span>
+              <span className="text-primary"> 2026</span>
             </h2>
             <p className="max-w-xl text-sm text-foreground/85 sm:text-base">
               Join us on January 10th for a full-day conference featuring

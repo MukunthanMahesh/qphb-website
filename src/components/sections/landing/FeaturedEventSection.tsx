@@ -87,7 +87,7 @@ export function FeaturedEventSection() {
                 alt={FEATURED_EVENT.image.alt}
                 width={640}
                 height={640}
-                className="relative z-[1] h-auto w-full object-contain drop-shadow-xl rounded-xl"
+                className="relative z-[1] h-auto w-full object-contain drop-shadow-xl transition-transform duration-500 ease-out hover:-translate-y-1 rounded-xl"
               />
             </motion.div>
           </div>
