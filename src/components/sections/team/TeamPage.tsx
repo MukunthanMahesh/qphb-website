@@ -7,7 +7,6 @@ export default function TeamPage() {
   return (
       <>
       <TeamHero />
-     
       <TestimonialSection />  
        <TeamIntro />  
       </>
