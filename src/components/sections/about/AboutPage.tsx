@@ -1,10 +1,10 @@
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder"
+import { AboutHero } from "./AboutHero"
 
-export default function AboutPage() {
+export default function TeamPage() {
   return (
-    <PagePlaceholder
-      title="About Us"
-      description="Learn more about QPHB’s mission, values, and initiatives."
-    />
-  )
+      <>
+      <AboutHero />
+
+      </>
+    )
 }
