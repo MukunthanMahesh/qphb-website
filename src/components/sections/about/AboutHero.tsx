@@ -28,7 +28,7 @@ export function AboutHero() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          {/* Left: Copy (Your Content) */}
+
           <div className="w-full max-w-xl lg:w-1/2 space-y-4 md:space-y-6 animate-fadeInUp">
             <h2 className="text-center text-accent text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight md:text-left">
               Queens Public Health Brigade
@@ -43,7 +43,7 @@ export function AboutHero() {
               that put communities first and create long-term impact, not short-term fixes.
             </p>
 
-            {/* Buttons Area (Using your provided design) */}
+
             <div className="mt-8 flex flex-col gap-4">
               <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                 <div className="flex flex-col items-start gap-2">
