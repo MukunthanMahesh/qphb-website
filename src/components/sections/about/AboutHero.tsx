@@ -10,7 +10,7 @@ export function AboutHero() {
   return (
     <section className="relative min-h-[850x] bg-background-secondary py-12 md:py-20 border-b border-border overflow-hidden flex items-center">
       <div className="mx-auto max-w-7xl px-6 w-full">
-        {/* Uppercase Label */}
+ 
         <motion.div
           className="hidden md:block text-center text-xs font-extrabold uppercase tracking-[0.25em] text-accent mb-8"
           initial={{ opacity: 0, y: 10 }}
@@ -22,14 +22,14 @@ export function AboutHero() {
         </motion.div>
 
         <motion.div
-          // Use items-center for a more robust alignment across all screen sizes
+
           className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          {/* Text Content */}
+    
           <div className="w-full max-w-xl lg:w-1/2 space-y-6 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent leading-[1.1] tracking-tight">
               Queens Public Health Brigade
@@ -61,7 +61,7 @@ export function AboutHero() {
             </div>
           </div>
 
-          {/* Image Column - Simplified Alignment */}
+
           <div className="flex w-full justify-center lg:w-1/2">
             <motion.div
               className="relative w-full max-w-[500px] aspect-square"
@@ -70,7 +70,7 @@ export function AboutHero() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {/* Background Glow */}
+          
               <div className="absolute -inset-10 bg-accent/5 blur-3xl rounded-full" />
 
               <Image

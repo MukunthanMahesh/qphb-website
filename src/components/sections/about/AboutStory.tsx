@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 export function AboutStory() {
   return (
     <section className="min-h-[600px] bg-background-secondary py-16 md:py-24 flex flex-col border-b border-border overflow-hidden">
-      {/* Section Header */}
+
       <motion.div
         className="mx-auto text-center text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent mb-12"
         initial={{ opacity: 0, y: 12 }}
@@ -19,14 +19,14 @@ export function AboutStory() {
 
       <div className="w-full">
         <motion.div
-          // CHANGE: Changed items-stretch to items-center to fix the alignment bug
+         
           className="mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 md:gap-12 lg:flex-row-reverse lg:items-center lg:gap-16"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          {/* Text Content */}
+      
           <div className="w-full max-w-xl lg:w-1/2 space-y-6 text-center lg:text-left">
             <h2 className="text-accent text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
               Why We Started
@@ -44,7 +44,7 @@ export function AboutStory() {
             </div>
           </div>
 
-          {/* Image Content - Keeping your original blur decorations */}
+      
           <div className="flex w-full justify-center lg:w-1/2">
             <motion.div
               className="relative w-full max-w-[560px]"
@@ -53,7 +53,7 @@ export function AboutStory() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              {/* Your original decorative blurs */}
+       
               <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-primary/20 blur-xl sm:h-28 sm:w-28" />
               <div className="pointer-events-none absolute -right-8 -bottom-8 h-28 w-28 rounded-full bg-secondary/25 blur-xl sm:h-32 sm:w-32" />
               
