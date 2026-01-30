@@ -20,7 +20,7 @@ const STEPS = [
   },
   {
     title: "Inaugural Health Summit",
-    date: "Spring 2025",
+    date: "Spring 2026",
     description: "Hosting our first campus-wide event featuring public health experts and hands-on workshops.",
     icon: <Star className="size-5" />,
     status: "upcoming"
@@ -30,10 +30,10 @@ const STEPS = [
 
 export function AboutRoadMap() {
   return (
-    <section className="pb-0 pt-24 white">
+    <section className="pb-0 pt-24 bg-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h3 className="text-accent font-extrabold tracking-[0.2em] uppercase text-xs mb-4">
+          <h3 className="text-accent font-extrabold tracking-[0.2em] uppercase text-xs mb-10">
             The Journey Ahead
           </h3>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Our Strategic Roadmap</h2>
