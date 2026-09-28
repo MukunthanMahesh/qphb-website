@@ -1,11 +1,15 @@
-import { PagePlaceholder } from "@/components/ui/PagePlaceholder"
+import { BrigadeHero } from "./BrigadeHero"
+import { BrigadeImpact } from "./BrigadeImpact"
+import { BrigadeInterest } from "./BrigadeInterest"
+import { BrigadeTrip } from "./BrigadeTrip"
 
 export default function BrigadePage() {
   return (
-    <PagePlaceholder
-      title="Our Brigade"
-      description="Learn more about our past and upcoming brigades, impact, and how you can get involved."
-    />
+    <>
+      <BrigadeHero />
+      <BrigadeTrip />
+      <BrigadeImpact />
+      <BrigadeInterest />
+    </>
   )
 }
-
