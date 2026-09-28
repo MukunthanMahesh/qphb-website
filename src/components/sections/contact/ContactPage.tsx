@@ -47,13 +47,13 @@ export default function ContactPage() {
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/60 to-black/40" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/45 md:bg-linear-to-r md:from-black/70 md:via-black/60 md:to-black/40" />
           </div>
 
-          <div className="relative z-10 flex w-full flex-col justify-between gap-10 p-6 sm:p-10 md:flex-row md:gap-12 md:p-14">
+          <div className="relative z-10 flex w-full flex-col justify-start gap-10 p-6 text-center sm:p-10 md:flex-row md:justify-between md:gap-12 md:p-14 md:text-left">
             {/* Left content: headline + info */}
-            <div className="flex flex-1 flex-col justify-between text-white">
-              <div className="max-w-xl space-y-4 md:space-y-6">
+            <div className="flex flex-1 flex-col justify-start text-white md:justify-between">
+              <div className="mx-auto max-w-xl space-y-4 md:mx-0 md:space-y-6">
                 <p className="text-[0.75rem] font-extrabold uppercase tracking-[0.25em] text-secondary">
                   Contact QPHB
                 </p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="mt-10 grid gap-8 text-sm md:mt-16 md:grid-cols-3">
+              <div className="mt-auto grid justify-items-center gap-8 text-sm md:mt-16 md:grid-cols-3 md:justify-items-start">
                 <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/70">
                     Location

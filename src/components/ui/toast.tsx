@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils"
 type ToastProps = {
   children: React.ReactNode
   className?: string
+  dismissible?: boolean
 }
 
-export function Toast({ children, className }: ToastProps) {
+export function Toast({ children, className, dismissible = true }: ToastProps) {
   const [visible, setVisible] = useState(true)
 
   return (
@@ -31,14 +32,16 @@ export function Toast({ children, className }: ToastProps) {
           <div className="w-1 shrink-0 bg-primary" aria-hidden="true" />
           <div className="flex flex-1 items-start justify-between gap-4 px-4 py-3 sm:items-center sm:px-5">
             <p className="font-medium leading-snug">{children}</p>
-            <button
-              type="button"
-              onClick={() => setVisible(false)}
-              aria-label="Dismiss notification"
-              className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-foreground/70 transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
-            >
-              <X className="size-4" aria-hidden="true" />
-            </button>
+            {dismissible ? (
+              <button
+                type="button"
+                onClick={() => setVisible(false)}
+                aria-label="Dismiss notification"
+                className="inline-flex size-8 shrink-0 items-center justify-center rounded-full text-foreground/70 transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+              >
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            ) : null}
           </div>
         </motion.div>
       ) : null}

@@ -26,9 +26,9 @@ export function HeroSection() {
             <source src="/videos/public-health-brigades-home-2025.mp4" type="video/mp4" />
           </video>
 
-          <div className="relative z-10 flex w-full flex-col justify-between bg-linear-to-r from-black/70 via-black/45 to-black/10 p-6 sm:p-10 md:p-16">
+          <div className="relative z-10 flex w-full flex-col justify-between bg-linear-to-b from-black/65 via-black/50 to-black/40 p-6 text-center text-white sm:p-10 md:bg-linear-to-r md:from-black/70 md:via-black/45 md:to-black/10 md:p-16 md:text-left">
             <motion.div
-              className="max-w-xl space-y-4 md:space-y-6 text-white"
+              className="mx-auto max-w-xl space-y-4 text-white md:mx-0 md:space-y-6"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
@@ -47,22 +47,26 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
+              className="mt-auto flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-start"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             >
               <Tooltip content="Coming Soon!" side="top">
-                <Button variant="default" disabled>
+                <Button
+                  type="button"
+                  disabled
+                  className="border border-white/45 bg-none bg-white/10 text-white shadow-none backdrop-blur-sm disabled:opacity-100"
+                >
                   <span className="flex items-center gap-2">
                     <HeartHandshake className="size-4" aria-hidden="true" />
                     <span>Join a Brigade</span>
                   </span>
                 </Button>
               </Tooltip>
-              <Button variant="ghost">
-                Get Involved At Queen&apos;s
+              <Button variant="ghost" className="text-white hover:text-secondary">
+                Get Involved @ Queen&apos;s
               </Button>
             </motion.div>
           </div>

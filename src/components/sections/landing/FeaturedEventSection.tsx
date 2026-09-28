@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { Toast } from "@/components/ui/toast"
 import Link from "next/link"
 import Image from "next/image"
 import { CalendarDays } from "lucide-react"
@@ -8,7 +9,7 @@ import { motion } from "framer-motion"
 
 const FEATURED_EVENT = {
   name: "Global Brigades Annual Summit",
-  year: "2025",
+  year: "2026",
   href: "/conference",
   ctaLabel: "View conference details",
   image: {
@@ -40,6 +41,9 @@ export function FeaturedEventSection() {
         >
           {/* Left: Copy */}
           <div className="w-full lg:w-1/2">
+            <Toast dismissible={false} className="mb-5">
+              This event has passed. Thank you for joining the 2026 Global Brigades Annual Summit.
+            </Toast>
             <div className="mt-4 space-y-5">
               <h2 className="text-center text-accent text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight md:text-left">
                 {FEATURED_EVENT.name}{" "}
