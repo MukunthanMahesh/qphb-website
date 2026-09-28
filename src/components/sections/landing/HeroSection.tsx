@@ -34,7 +34,7 @@ export function HeroSection() {
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             >
-              <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-secondary">
+              <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-secondary">
                 Queen’s Public Health Brigades
               </p>
               <h1 className="text-3xl font-extrabold sm:text-4xl md:text-5xl leading-tight">
