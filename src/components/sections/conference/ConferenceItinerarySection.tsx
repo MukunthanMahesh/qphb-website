@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function ConferenceItinerarySection() {
   return (
-    <section id="schedule" className="bg-background py-16 md:py-20">
+    <section id="schedule" className="bg-background-secondary py-16 md:py-20">
       <motion.div
         className="mx-auto max-w-6xl px-6"
         initial={{ opacity: 0, y: 32 }}

@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react"
 
 export function ConferenceSponsorsSection() {
   return (
-    <section className="bg-background-secondary py-16 md:py-20 border-t border-border">
+    <section className="bg-background py-16 md:py-20 border-t border-border">
       <motion.div
         className="mx-auto flex max-w-6xl flex-col gap-12 px-6"
         initial={{ opacity: 0, y: 32 }}

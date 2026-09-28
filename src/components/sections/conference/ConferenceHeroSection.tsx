@@ -1,25 +1,26 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { Toast } from "@/components/ui/toast"
+import { Tooltip } from "@/components/ui/tooltip"
 import Image from "next/image"
 import Link from "next/link"
 import { CalendarDays, Clock, MapPin, Ticket, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 
+const WALLACE_HALL_MAP =
+  "https://map.queensu.ca/?id=1955#!m/1219265?share"
+
 export function ConferenceHeroSection() {
   return (
-    <section className="min-h-[820px] bg-background-secondary pt-10 pb-14 md:pt-16 md:pb-20 flex flex-col border-b border-border">
-      <motion.div
-        className="hidden md:block mx-auto text-center text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent"
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        Global Brigades Annual Conference
-      </motion.div>
+    <section className="bg-background pt-6 pb-14 md:pt-8 md:pb-20 flex flex-col border-b border-border">
+      <div className="mx-auto w-full max-w-3xl px-6">
+        <Toast>
+          Thank you for joining the 2026 Global Brigades Annual Summit. We look forward to seeing you next year! 🎉
+        </Toast>
+      </div>
 
-      <div className="flex-1 flex items-center">
+      <div>
         <motion.div
           className="mx-auto flex max-w-7xl flex-col items-center gap-10 px-6 md:gap-12 lg:flex-row-reverse lg:items-stretch lg:gap-16"
           initial={{ opacity: 0, y: 32 }}
@@ -29,7 +30,7 @@ export function ConferenceHeroSection() {
         >
           {/* Left: Copy */}
           <div className="w-full max-w-xl lg:w-1/2 space-y-4 md:space-y-6 animate-fadeInUp">
-            <h2 className="text-center text-accent text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight md:text-left">
+            <h2 className="text-center text-accent text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight md:text-left">
               Global Brigades Annual Summit
               <span className="text-primary"> 2026</span>
             </h2>
@@ -48,71 +49,63 @@ export function ConferenceHeroSection() {
               and community-driven change.
             </p>
 
-            <div className="mt-6 grid gap-3 text-sm grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex items-start gap-2">
-                <CalendarDays className="mt-0.5 size-4 text-secondary" />
-                <div>
-                  <p className="font-semibold">Date</p>
-                  <p className="text-foreground/80">January 10, 2026</p>
-                </div>
+            <div className="mt-6 flex flex-col gap-3 text-sm sm:flex-row sm:flex-wrap sm:gap-x-6">
+              <div className="flex items-center gap-2 font-semibold text-foreground">
+                <CalendarDays className="size-4 shrink-0 text-secondary" />
+                <p>January 10, 2026</p>
               </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 size-4 text-secondary" />
-                <div>
-                  <p className="font-semibold">Location</p>
-                  <p className="text-foreground/80">Wallace Hall (JDUC)</p>
-                </div>
+              <div className="flex items-center gap-2 font-semibold text-foreground">
+                <MapPin className="size-4 shrink-0 text-secondary" />
+                <a
+                  href={WALLACE_HALL_MAP}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-4 decoration-foreground/60 hover:text-primary"
+                >
+                  Wallace Hall (JDUC)
+                </a>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 size-4 text-secondary" />
-                <div>
-                  <p className="font-semibold">Time</p>
-                  <p className="text-foreground/80">11:00 AM – 6:00 PM</p>
-                </div>
+              <div className="flex items-center gap-2 font-semibold text-foreground">
+                <Clock className="size-4 shrink-0 text-secondary" />
+                <p>11:00 AM – 6:00 PM</p>
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4">
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                <div className="flex flex-col items-start gap-2">
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-start">
+              <div className="flex flex-col items-center gap-3">
+                <Tooltip content="This event has passed" className="cursor-not-allowed">
                   <Button
-                    asChild
+                    type="button"
+                    disabled
                     className="transition-transform duration-200 ease-out hover:-translate-y-0.5"
                   >
-                    <Link
-                      href="https://www.zeffy.com/en-CA/ticketing/global-brigades-annual-conference"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Ticket className="size-4" aria-hidden="true" />
-                      <span>Purchase tickets</span>
-                    </Link>
+                    <Ticket className="size-4" aria-hidden="true" />
+                    <span>Purchase tickets</span>
                   </Button>
-                  <a
-                    href="https://www.zeffy.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[0.7rem] uppercase tracking-[0.18em] text-foreground/60"
-                  >
-                    <span className="h-[1px] w-4 bg-foreground/30" />
-                    <span>Powered by</span>
-                    <Image
-                      src="/images/zeffy_logo.webp"
-                      alt="Zeffy"
-                      width={70}
-                      height={18}
-                      className="h-5 w-auto"
-                    />
-                  </a>
-                </div>
-
-                <Button asChild variant="ghost">
-                  <Link href="#schedule" className="flex items-center gap-2">
-                    <span>View schedule</span>
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </Link>
-                </Button>
+                </Tooltip>
+                <a
+                  href="https://www.zeffy.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-foreground/60 transition-colors hover:text-foreground"
+                >
+                  <span>Ticketing by</span>
+                  <Image
+                    src="/images/zeffy_logo.webp"
+                    alt="Zeffy"
+                    width={64}
+                    height={16}
+                    className="h-3.5 w-auto"
+                  />
+                </a>
               </div>
+
+              <Button asChild variant="ghost">
+                <Link href="#schedule" className="flex items-center gap-2">
+                  <span>View schedule</span>
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </Button>
             </div>
           </div>
 
