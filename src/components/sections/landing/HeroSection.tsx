@@ -7,10 +7,10 @@ import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
-    <section className="min-h-[790px] bg-background">
+    <section className="bg-background pb-4 md:pb-5">
       <div className="w-full px-4">
         <motion.div
-          className="relative mx-auto flex h-[740px] md:h-[670px] 2xl:h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black"
+          className="relative mx-auto flex h-[calc(100dvh-80px-1rem)] md:h-[calc(100dvh-112px-1.25rem)] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[20px] bg-black"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}

@@ -30,10 +30,10 @@ export default function ContactPage() {
   const [message, setMessage] = useState("")
 
   return (
-    <section className="min-h-[790px] bg-background">
+    <section className="bg-background pb-4 md:pb-5">
       <div className="w-full px-4">
         <motion.div
-          className="relative mx-auto flex min-h-[640px] md:min-h-[670px] 2xl:min-h-[810px] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[28px] bg-black"
+          className="relative mx-auto flex min-h-[calc(100dvh-80px-1rem)] md:min-h-[calc(100dvh-112px-1.25rem)] max-w-[1408px] lg:max-w-[2000px] overflow-hidden rounded-[28px] bg-black"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
