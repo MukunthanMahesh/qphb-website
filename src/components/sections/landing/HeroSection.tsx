@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Tooltip } from "@/components/ui/tooltip"
+import Link from "next/link"
 import { HeartHandshake } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -38,7 +38,7 @@ export function HeroSection() {
                 Queen’s Public Health Brigades
               </p>
               <h1 className="text-3xl font-extrabold sm:text-4xl md:text-5xl leading-tight">
-                The largest student-led movement for global health equity.
+                We’re part of the largest student-led movement for global health equity.
               </h1>
               <p className="text-sm md:text-base text-white/85">
                 A student-led community advancing health equity through our
@@ -53,18 +53,17 @@ export function HeroSection() {
               viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             >
-              <Tooltip content="Coming Soon!" side="top">
-                <Button
-                  type="button"
-                  disabled
-                  className="border border-white/45 bg-none bg-white/10 text-white shadow-none backdrop-blur-sm disabled:opacity-100"
-                >
+              <Button
+                asChild
+                className="border border-white/45 bg-none bg-white/10 text-white shadow-none backdrop-blur-sm hover:bg-white/20"
+              >
+                <Link href="/brigade">
                   <span className="flex items-center gap-2">
                     <HeartHandshake className="size-4" aria-hidden="true" />
                     <span>Join a Brigade</span>
                   </span>
-                </Button>
-              </Tooltip>
+                </Link>
+              </Button>
               <Button variant="ghost" className="text-white hover:text-secondary">
                 Get Involved @ Queen&apos;s
               </Button>

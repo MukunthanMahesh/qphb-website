@@ -7,11 +7,11 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
         <div className="flex items-center md:flex-1 md:justify-start">
           <Image
-            src="/qphb_logo.png"
+            src="/qphb-brigades-logo.png"
             alt="Queen’s Public Health Brigades logo"
-            width={160}
-            height={50}
-            className="h-auto w-[140px] sm:w-[160px] object-contain"
+            width={471}
+            height={230}
+            className="h-auto w-[120px] sm:w-[140px] object-contain"
           />
         </div>
 

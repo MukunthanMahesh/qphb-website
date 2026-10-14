@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import { NameCard } from "@/components/ui/NameCard"
 import { motion } from "framer-motion";
 
@@ -189,7 +188,7 @@ export function TeamIntro() {
   );
 }
 
-function TeamSection( {title, members}: {title: string;members: any[];}) {
+function TeamSection( {title, members}: {title: string;members: (typeof NAME_CARD_DATA)[number][];}) {
   if (!members.length) return null;
   return (
     <div className="space-y-4">
