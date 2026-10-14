@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { motion } from "framer-motion"
-
 interface NameCardProps {
   name: string;
   role: string;
@@ -15,9 +12,10 @@ export function NameCard({name, role, program, imagesrc} : NameCardProps) {
             <div className = "pt-6 pb-3 h-full w-full rounded-2xl border border-black/10 bg-white align-item-center">
                 {/* Image */}
                     <div className="mx-auto h-40 w-40 overflow-hidden rounded-full relative ring-1 ring-[#FFD8C3] rounded-2xl">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src={imagesrc}
-                            alt= {'${name} headshot'}
+                            alt={`${name} headshot`}
                         />
                     </div>
                 {/* Text Info */}

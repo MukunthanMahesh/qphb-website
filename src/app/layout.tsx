@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   title: "Queen’s Public Health Brigades",
   description:
     "Official website of Queen’s Public Health Brigades — promoting public health awareness through our annual conference and case competition.",
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     title: "Queen’s Public Health Brigades",
     description:

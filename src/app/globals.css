@@ -97,3 +97,22 @@
     color: transparent;
   }
 }
+
+@keyframes brigade-rise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.brigade-rise {
+  animation: brigade-rise var(--brigade-duration, 40s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brigade-rise {
+    animation: none;
+  }
+}

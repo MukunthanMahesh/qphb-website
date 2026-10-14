@@ -14,7 +14,7 @@ const stats = [
 export function BrigadeImpact() {
   return (
     <section className="bg-background-secondary py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1408px] items-center gap-10 px-4 lg:max-w-[2000px] lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

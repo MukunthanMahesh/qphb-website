@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import { animateScroll as scroll } from "react-scroll"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-import { Tooltip } from "@/components/ui/tooltip"
 import Image from "next/image"
 import {
   Info,
@@ -16,6 +15,9 @@ import {
   Phone,
   HandCoins,
 } from "lucide-react"
+
+const DONATE_URL =
+  "https://my.globalbrigades.org/university/queen-s-university/brigade/Queen-s-University-Public-Health-Brigade-May-2027-Panama/donate"
 
 export function Navbar() {
   const pathname = usePathname()
@@ -65,11 +67,12 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link href="/" onClick={handleLogoClick} className="flex items-center">
             <Image
-              src="/qphb_logo.png" // replace with your logo asset
-              alt="QPHB logo"
-              width={204}
-              height={64}
-              className="object-contain w-[140px] sm:w-[170px] lg:w-[204px] h-auto"
+              src="/qphb-brigades-logo.png"
+              alt="Queen’s Public Health Brigades logo"
+              width={471}
+              height={230}
+              priority
+              className="h-12 w-auto object-contain md:h-[72px] lg:h-[88px]"
             />
           </Link>
         </div>
@@ -93,20 +96,22 @@ export function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Tooltip content="Coming Soon" side="bottom">
-            <Button variant="ghost" disabled>
+          <Button asChild variant="ghost">
+            <Link href="/brigade">
               <span className="flex items-center gap-2">
                 <HeartHandshake className="size-4" aria-hidden="true" />
                 <span>Join a Brigade</span>
               </span>
-            </Button>
-          </Tooltip>
+            </Link>
+          </Button>
 
-          <Button variant="default">
-            <span className="flex items-center gap-2">
-              <HandCoins className="size-4" aria-hidden="true" />
-              <span>Donate Now</span>
-            </span>
+          <Button asChild variant="default">
+            <a href={DONATE_URL} target="_blank" rel="noreferrer">
+              <span className="flex items-center gap-2">
+                <HandCoins className="size-4" aria-hidden="true" />
+                <span>Donate Now</span>
+              </span>
+            </a>
           </Button>
         </div>
 
@@ -153,19 +158,21 @@ export function Navbar() {
 
               {/* CTA Buttons */}
               <div className="mt-8 flex flex-col items-center gap-3">
-                <Tooltip content="Coming Soon" side="bottom">
-                  <Button variant="outline" className="w-[90%]" disabled>
+                <Button asChild variant="outline" className="w-[90%]">
+                  <Link href="/brigade" onClick={() => setOpen(false)}>
                     <span className="flex items-center justify-center gap-2">
                       <HeartHandshake className="size-4" aria-hidden="true" />
                       <span>Join a Brigade</span>
                     </span>
-                  </Button>
-                </Tooltip>
-                <Button variant="default" className="w-[90%]">
-                  <span className="flex items-center justify-center gap-2">
-                    <HandCoins className="size-4" aria-hidden="true" />
-                    <span>Donate Now</span>
-                  </span>
+                  </Link>
+                </Button>
+                <Button asChild variant="default" className="w-[90%]">
+                  <a href={DONATE_URL} target="_blank" rel="noreferrer">
+                    <span className="flex items-center justify-center gap-2">
+                      <HandCoins className="size-4" aria-hidden="true" />
+                      <span>Donate Now</span>
+                    </span>
+                  </a>
                 </Button>
               </div>
             </SheetContent>
