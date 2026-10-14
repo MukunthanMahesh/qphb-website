@@ -64,8 +64,8 @@ function PhotoReel({ photos }: { photos: string[] }) {
         <RisingColumn photos={padded(left)} duration={`${Math.max(30, left.length * 9)}s`} />
         <RisingColumn photos={padded(right)} duration={`${Math.max(36, right.length * 11)}s`} />
       </div>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background via-background/70 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-background via-background/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-background/90 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background/90 to-transparent" />
     </div>
   )
 }
