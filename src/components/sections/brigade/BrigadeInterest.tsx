@@ -3,18 +3,58 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ArrowUpRight, Mail } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 
 const INTEREST_FORM = "https://forms.gle/gnctfoax1NyW9FAo9"
 const actionButtonClass = "w-fit justify-center px-6 has-[>svg]:px-6"
 
 export function BrigadeInterest() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const prefersReducedMotion = useReducedMotion()
+  // null until mount so we never start at opacity 0 on desktop (see useTilt race below).
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px)")
+    const sync = () => setIsDesktop(media.matches)
+    sync()
+    media.addEventListener("change", sync)
+    return () => media.removeEventListener("change", sync)
+  }, [])
+
+  // Progress 0 -> card just entering the viewport; 1 -> card centered on screen.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center center"],
+  })
+
+  // Positive rotateX tips the top of the card away (tilted backward).
+  const rotateX = useTransform(scrollYProgress, [0, 1], [37, 0])
+  // Scroll tilt only from the Tailwind `md` breakpoint up (not phones).
+  const useTilt = isDesktop === true && !prefersReducedMotion
+  // Fade-up only once we know we're on a small screen (or reduced motion).
+  const useFade = isDesktop === false || !!prefersReducedMotion
+
   return (
-    <section className="bg-background px-6 py-16 md:px-10 md:py-24">
+    <section
+      ref={sectionRef}
+      className="bg-background px-6 pb-0 pt-16 md:px-10 md:pt-24 md:[perspective:1200px]"
+    >
       <motion.div
-        className="mx-auto grid max-w-6xl overflow-hidden rounded-[20px] bg-accent text-white md:grid-cols-2"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        className="mx-auto grid max-w-6xl overflow-hidden rounded-[20px] bg-accent text-white shadow-[0_24px_60px_rgba(121,80,39,0.18)] md:grid-cols-2"
+        style={
+          useTilt
+            ? {
+                rotateX,
+                transformPerspective: 1200,
+                transformOrigin: "center center",
+                opacity: 1,
+              }
+            : undefined
+        }
+        initial={useFade ? { opacity: 0, y: 24 } : false}
+        whileInView={useFade ? { opacity: 1, y: 0 } : undefined}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
