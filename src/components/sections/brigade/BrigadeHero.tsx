@@ -292,8 +292,8 @@ export function BrigadeHero({ images }: { images: Record<string, string> }) {
 
               <div className="mt-auto flex w-full flex-col items-center gap-2 pt-6 sm:flex-row md:justify-start">
                 <Button asChild className={actionButtonClass}>
-                  <a href={INTEREST_FORM} target="_blank" rel="noreferrer">
-                    I&apos;m interested
+                  <a href={"https://my.globalbrigades.org/university/queen-s-university/public-health/in/panama"} target="_blank" rel="noreferrer">
+                    Register Now
                     <ArrowUpRight className="size-4" aria-hidden="true" />
                   </a>
                 </Button>
