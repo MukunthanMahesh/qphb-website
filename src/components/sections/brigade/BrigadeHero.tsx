@@ -58,14 +58,13 @@ const facts = [
   {
     key: "disparities",
     title: "Healthcare",
-    value: "",
-    label: "Healthcare Gap",
+    value: "10×",
+    label: "rural care gap",
     back: (
       <>
-        There are significant healthcare disparities between urban and rural
-        Panama. The Ngäbe-Buglé comarca has about{" "}
-        <b>3.3 health professionals per 10,000 people</b>, compared with{" "}
-        <b>33.3</b> nationally.
+        Rural areas are far behind in healthcare access. Ngäbe-Buglé has{" "}
+        <b>3.3 health professionals per 10,000 people</b>, vs <b>33.3</b>{" "}
+        nationally.
       </>
     ),
     icon: HeartPulse,
@@ -74,8 +73,8 @@ const facts = [
   {
     key: "landscape",
     title: "Landscape",
-    value: "",
-    label: "Landscape",
+    value: "80km",
+    label: "Panama Canal",
     back: (
       <>
         Panama is known for the Panama Canal (about <b>80 km</b> long, open
@@ -136,11 +135,18 @@ function FactCard({ fact, image }: { fact: Fact; image?: string }) {
           </div>
         </div>
 
-        {/* Back: the full text, with the key statistics in bold */}
+        {/* Back: same front image with a dark overlay so the white text pops */}
         <div
           className={`absolute inset-0 flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br p-4 text-white [backface-visibility:hidden] [transform:rotateY(180deg)] ${fact.tone}`}
         >
-          <div className="absolute inset-0 bg-black/25" />
+          {image ? (
+            <>
+              <Image src={image} alt="" fill sizes="(min-width: 1280px) 160px, 45vw" className="object-cover" />
+              <div className="absolute inset-0 bg-black/70" />
+            </>
+          ) : (
+            <div className="absolute inset-0 bg-black/25" />
+          )}
           <p className="relative z-10 text-sm font-extrabold uppercase tracking-[0.08em] text-secondary">
             {fact.title}
           </p>
