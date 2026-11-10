@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && open -a 'Google Chrome' http://localhost:3000",
+    "dev:mac": "next dev && open -a 'Google Chrome' http://localhost:3000",
+    "dev:windows": "next dev && start chrome http://localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
