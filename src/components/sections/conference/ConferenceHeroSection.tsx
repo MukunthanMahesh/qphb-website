@@ -22,7 +22,7 @@ export function ConferenceHeroSection() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <Image
-            src="/images/jduc.jpg"
+            src="/images/conference/jduc.jpg"
             alt="Conference with speakers, delegates, and networking opportunities."
             fill
             priority
@@ -102,19 +102,21 @@ export function ConferenceHeroSection() {
                     className="w-full border border-white/45 bg-none bg-white/10 px-4 text-xs tracking-[0.08em] text-white shadow-none backdrop-blur-sm hover:bg-white/20 sm:px-8 sm:text-sm sm:tracking-[0.10em]"
                   >
                     <a href={TICKETS_URL} target="_blank" rel="noreferrer">
-                      <Ticket className="size-4" aria-hidden="true" />
+                      <Ticket className="size-4 text-secondary" aria-hidden="true" />
                       <span>Purchase tickets</span>
                       <span
                         className="mx-0.5 h-4 w-px shrink-0 bg-white/35"
                         aria-hidden="true"
                       />
-                      <Image
-                        src="/images/zeffy_logo.webp"
-                        alt="via Zeffy"
-                        width={80}
-                        height={20}
-                        className="h-4 w-auto sm:h-5"
-                      />
+                      <span className="inline-flex h-4 items-center sm:h-5">
+                        <Image
+                          src="/images/conference/zeffy_logo_white.svg"
+                          alt="via Zeffy"
+                          width={80}
+                          height={20}
+                          className="block h-full w-auto object-contain translate-y-0.5 sm:translate-y-0"
+                        />
+                      </span>
                     </a>
                   </Button>
                 </div>
