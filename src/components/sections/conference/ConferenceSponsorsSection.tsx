@@ -66,7 +66,7 @@ export function ConferenceSponsorsSection() {
                 className="relative block rounded-3xl border border-border bg-card/80 px-6 py-6 shadow-[0px_18px_40px_rgba(15,23,42,0.06)] hover:scale-110 transition-transform duration-300"
               >
                 <Image
-                  src="/images/sponsors_and_partners/Queens-graphic-lockup-dunin-deshpandeinnovationcentre-horz-digital-black.png"
+                  src="/images/conference/2026-SPONSOR-DDQIC-logo.png"
                   alt="Dunin-Deshpande Queen's Innovation Centre logo"
                   width={640}
                   height={200}
@@ -121,7 +121,7 @@ export function ConferenceSponsorsSection() {
                 className="relative block rounded-3xl border border-border bg-card/80 px-6 py-6 shadow-[0px_18px_40px_rgba(15,23,42,0.06)] hover:scale-110 transition-transform duration-300"
               >
                 <Image
-                  src="/images/sponsors_and_partners/URNCST-Journal-Logo.png"
+                  src="/images/conference/2026-SPONSOR-URNCST-journal-logo.png"
                   alt="URNCST Journal logo"
                   width={640}
                   height={200}
