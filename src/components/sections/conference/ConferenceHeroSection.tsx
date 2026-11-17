@@ -42,27 +42,27 @@ export function ConferenceHeroSection() {
             <div className="flex w-full flex-1 flex-col items-center md:items-stretch">
               <div className="w-full max-w-xl space-y-4 md:space-y-6">
                 <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
-                  Global Brigades Annual Summit
-                  <span className="text-secondary"> 2026</span>
+                  Global Brigades Annual Conference
+                  <span className="text-secondary"> 2027</span>
                 </h2>
                 <p className="text-sm text-white/85 sm:text-base">
-                  Join us on January 10th for a full-day conference featuring
-                  speakers in global health, a hands-on case competition, and time
-                  to connect with students who care about health equity and
+                  Join us on January 16th, 2027 for a full-day conference featuring
+                  speakers in global health, a hands-on case competition, and an opportunity to network with students and professionals who care about health equity and
                   international development.
                 </p>
                 <p className="text-sm text-white/85 sm:text-base">
-                  Hear from this year&apos;s speakers{" "}
+                  Speakers will be announced soon!                
+                  {/* Hear from this year&apos;s speakers{" "}
                   <span className="font-semibold text-white">Ozma Aziz</span>,{" "}
                   <span className="font-semibold text-white">Phil Bowers</span>, and{" "}
                   <span className="font-semibold text-white">Dr. Jennifer Carpenter</span>{" "}
                   as they share insights on careers in global health, health equity,
-                  and community-driven change.
+                  and community-driven change. */}
                 </p>
               <div className="flex w-full flex-col items-center gap-3 text-sm md:flex-row md:flex-wrap md:items-start md:gap-x-6">
                   <div className="flex items-center gap-2 font-semibold">
                     <CalendarDays className="size-4 shrink-0 text-secondary" />
-                    <p>January 10, 2026</p>
+                    <p>January 16, 2027</p>
                   </div>
                   <div className="flex items-center gap-2 font-semibold">
                     <MapPin className="size-4 shrink-0 text-secondary" />
