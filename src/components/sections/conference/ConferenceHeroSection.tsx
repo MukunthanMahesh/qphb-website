@@ -33,9 +33,11 @@ export function ConferenceHeroSection() {
           <div className="absolute inset-0 bg-linear-to-b from-black/75 via-black/60 to-black/45 md:bg-linear-to-r md:from-black/80 md:via-black/55 md:to-black/20" />
 
           <div className="relative z-10 flex w-full flex-col items-center p-6 text-center text-white sm:p-10 md:items-stretch md:p-16 md:text-left">
-            <Toast dismissible={false} className="mb-6 w-full max-w-2xl border-white/20 bg-white/95 text-foreground md:mx-0">
+            
+            {/* Use this toast to display a message when the conference has passed! */}
+            {/* <Toast dismissible={false} className="mb-6 w-full max-w-2xl border-white/20 bg-white/95 text-foreground md:mx-0">
               Thank you for joining the 2026 Global Brigades Annual Summit. We look forward to seeing you next year! 🎉
-            </Toast>
+            </Toast> */}
 
             <div className="flex w-full flex-1 flex-col items-center md:items-stretch">
               <div className="w-full max-w-xl space-y-4 md:space-y-6">
