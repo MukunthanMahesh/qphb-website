@@ -3,8 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Toast } from "@/components/ui/toast"
 import Image from "next/image"
-import Link from "next/link"
-import { CalendarDays, Ticket, ArrowDown } from "lucide-react"
+import { CalendarDays, Ticket } from "lucide-react"
 import { motion } from "framer-motion"
 
 const TICKETS_URL =
@@ -123,14 +122,9 @@ export function ConferenceHeroSection() {
               </div>
             </div>
 
-            <div className="mt-auto flex w-full justify-center pt-10 md:pt-8">
-              <Button asChild variant="ghost" className="text-white hover:text-secondary">
-                <Link href="#schedule" className="flex items-center gap-2">
-                  <span>View schedule</span>
-                  <ArrowDown className="size-4" aria-hidden="true" />
-                </Link>
-              </Button>
-            </div>
+            <p className="mt-auto pt-10 text-sm text-white/60 md:pt-8">
+              Conference schedule, partners, and speakers to be announced soon!
+            </p>
           </div>
         </motion.div>
       </div>
