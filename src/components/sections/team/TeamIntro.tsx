@@ -1,4 +1,4 @@
-import { NameCard } from "@/components/ui/NameCard"
+import { NameCard } from "@/components/ui/NameCard";
 
 const NAME_CARD_DATA = [
   {
@@ -101,7 +101,7 @@ const NAME_CARD_DATA = [
   },
   {
     id: 14,
-    name: "Ishaan Bakirathan",
+    name: "Ishaann Bakirathan",
     role: "Conference Director",
     program: "4th Year Health Sciences",
     imagesrc: "/images/team/Ishaan_Bakirathan_ConferenceDirector_4HS.JPG",
@@ -130,76 +130,74 @@ const NAME_CARD_DATA = [
 ];
 
 const groupedTeams = {
-  executives: NAME_CARD_DATA.filter(p =>
-    p.role.includes("President")
+  executives: NAME_CARD_DATA.filter((p) => p.role.includes("President")),
+
+  marketing: NAME_CARD_DATA.filter((p) => p.role.includes("Marketing")),
+
+  admin: NAME_CARD_DATA.filter(
+    (p) => p.role.includes("Secretary") || p.role.includes("Finance"),
   ),
 
-  marketing: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Marketing")
-  ),
+  fundraising: NAME_CARD_DATA.filter((p) => p.role.includes("Fundraising")),
 
-  admin: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Secretary") || p.role.includes("Finance")
-  ),
+  outreach: NAME_CARD_DATA.filter((p) => p.role.includes("Outreach")),
 
-  fundraising: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Fundraising")
-  ),
+  conference: NAME_CARD_DATA.filter((p) => p.role.includes("Conference")),
 
-  outreach: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Outreach")
-  ),
-
-  conference: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Conference")
-  ),
-
-  firstYears: NAME_CARD_DATA.filter(p =>
-    p.role.includes("First Year")
-  ),
+  firstYears: NAME_CARD_DATA.filter((p) => p.role.includes("First Year")),
 };
 
 export function TeamIntro() {
   return (
-    <section className="
+    <section
+      className="
       mx-auto max-w-7xl px-6 py-12 space-y-14
       bg-[radial-gradient(circle_at_left,_var(--secondary)_0%,_transparent_55%),_radial-gradient(circle_at_right,_var(--secondary)_0%,_transparent_55%),_white]
-    ">
-
-
-      <TeamSection title="Executive Team" members={groupedTeams.executives}/>
+    "
+    >
+      <TeamSection title="Executive Team" members={groupedTeams.executives} />
       <TeamSection title="Marketing Team" members={groupedTeams.marketing} />
       <TeamSection title="Administrative Team" members={groupedTeams.admin} />
-      <TeamSection title="Fundraising Team" members={groupedTeams.fundraising} />
+      <TeamSection
+        title="Fundraising Team"
+        members={groupedTeams.fundraising}
+      />
       <TeamSection title="Outreach Team" members={groupedTeams.outreach} />
       <TeamSection title="Conference Team" members={groupedTeams.conference} />
       <TeamSection title="First Year Team" members={groupedTeams.firstYears} />
-
     </section>
   );
 }
 
-function TeamSection( {title, members}: {title: string;members: (typeof NAME_CARD_DATA)[number][];}) {
+function TeamSection({
+  title,
+  members,
+}: {
+  title: string;
+  members: (typeof NAME_CARD_DATA)[number][];
+}) {
   if (!members.length) return null;
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-4">
         <div className="flex-1 h-px bg-gray-300" />
-        <h2 className="text-2xl font-bold text-accent text-center whitespace-nowrap">{title}</h2>
+        <h2 className="text-2xl font-bold text-accent text-center whitespace-nowrap">
+          {title}
+        </h2>
         <div className="flex-1 h-px bg-gray-300" />
       </div>
-        <div className="flex flex-wrap gap-15 justify-center pt-10">
-            {members.map((member, index) => (
-                <NameCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.role}
-                  program={member.program}
-                  imagesrc={member.imagesrc}
-                  index={index}
-                />
-              ))}
-        </div>
+      <div className="flex flex-wrap gap-15 justify-center pt-10">
+        {members.map((member, index) => (
+          <NameCard
+            key={member.id}
+            name={member.name}
+            role={member.role}
+            program={member.program}
+            imagesrc={member.imagesrc}
+            index={index}
+          />
+        ))}
+      </div>
     </div>
   );
 }
