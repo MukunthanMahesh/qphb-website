@@ -6,20 +6,20 @@ import { motion } from "framer-motion"
 
 const PRESIDENTS = [
   {
-    name: "Madhureema Balasubramani Rupa",
+    name: "Madhureema Balasubramani-Rupa",
     role: "Co-President",
-    program: "3rd Year Health Sciences",
-    imgsrc: "/images/team/Madhureema_Balasubramani_Rupa-Co-President.JPG",
+    program: "4th Year Health Sciences",
+    imgsrc: "/images/team/MadhureemaBalasubramani-Rupa_Co-Pres_4HS.JPG",
     quote:
       "My motivation to serve as Co-President of Queen’s Public Health Brigades stems from a desire to turn our public healthgoals into tangible community impact. Public health remains an underexplored yet essential pillar of care. This year, I aim to expand our club’s presence across Queen’s and the Kingston community, strengthen our support for local and global health initiatives, and create opportunities for students to engage meaningfully with public health practice and education. To me, being Co-President isn’t just about overseeing tasks, it’s about working alongside every committee, and taking on responsibilities where needed. I value empathy, open communication, and approachability to ensure every team member feels supported, heard, and motivated.",
   },
   {
-    name: "Kaliyha Dennis",
+    name: "Soha Kar",
     role: "Co-President",
     program: "4th Year Health Sciences",
-    imgsrc: "/images/team/Kaliyha_Dennis-Co-President.JPG",
+    imgsrc: "/images/team/SohaKar_Co-Pres_4HS.JPG",
     quote:
-      "I joined Global Brigades in my first year at Queen’s, and now in my fourth year, it has truly shaped my university experience. Each year has given me the opportunity to recognize my privilege and use it to advocate for others around the world. This experience is at the heart of why I wanted to serve as Public Health Co-President. I want more Queen’s students to experience that same transformative connection, meeting people globally, discovering their passion for advocacy, and finding direction in who they want to become and how they want to serve. This year, I also want to ensure that the impact of our work abroad is felt here in Kingston by engaging with local public health initiatives and uplifting the very community that has supported our education. As Co-President, I see my role as that of a servant leader. Madhu and I worked hard to build our team not to lead from above, but to support from within. Our members are experts in what they do, and I aim to uplift and empower them to succeed. Ultimately, being Co-President means fostering a spirit of advocacy, collaboration, and global citizenship,  the same spirit that first inspired me when I joined Global Brigades.",
+      "Quote coming soon.",
   },
 ];
 
@@ -51,7 +51,7 @@ export function TestimonialSection() {
             <div className="rounded-3xl bg-[conic-gradient(at_center,_orange_0%,_#fff7ee_25%,_orange_50%,_#fff7ee_75%,_orange_100%)] p-[1px] shadow-lg">
                 <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
                     <Image
-                    src="/images/team/Pres.JPG"
+                    src="/images/team/IMG_1116.JPG"
                     alt="Co-Presidents group photo"
                     width={900}
                     height={500}
