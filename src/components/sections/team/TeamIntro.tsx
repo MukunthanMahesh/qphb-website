@@ -1,135 +1,131 @@
-"use client"
 import { NameCard } from "@/components/ui/NameCard"
-import { motion } from "framer-motion";
 
 const NAME_CARD_DATA = [
   {
     id: 0,
-    name: "Madhureema Balasubramani Rupa",
+    name: "Madhureema Balasubramani-Rupa",
     role: "Co-President",
-    program: "3rd Year Health Sciences",
-    imagesrc: "/images/team/Madhureema_Balasubramani_Rupa-Co-President.webp",
+    program: "4th Year Health Sciences",
+    imagesrc: "/images/team/MadhureemaBalasubramani-Rupa_Co-Pres_4HS.JPG",
   },
   {
     id: 1,
-    name: "Kaliyha Dennis",
+    name: "Soha Kar",
     role: "Co-President",
     program: "4th Year Health Sciences",
-    imagesrc: "/images/team/Kaliyha_Dennis-Co-President.webp",
+    imagesrc: "/images/team/SohaKar_Co-Pres_4HS.JPG",
   },
   {
     id: 2,
     name: "Saachi Jain",
     role: "Marketing Director",
-    program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/Saachi_Jain-Marketing_Director.webp",
+    program: "3rd Year Health Sciences",
+    imagesrc: "/images/team/SaachiJain_MarketingDirector_3HS.JPG",
   },
   {
     id: 3,
-    name: "Zara Sheikh",
+    name: "Judy Moon",
     role: "Marketing Coordinator",
-    program: "2nd Year Life Sciences & Minor in Psychology",
-    imagesrc: "/images/team/Zara_Sheikh-Marketing_Coordinator.webp",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/JudyMoon_MarketingCoordinator_2HS.JPG",
   },
   {
     id: 4,
-    name: "Norah Burman",
-    role: "Administrative Director",
-    program: "3rd Year Life Sciences",
-    imagesrc: "/images/team/Norah_Burman-Administrative_Director.webp",
+    name: "Jake Turnbull",
+    role: "Marketing Coordinator",
+    program: "2nd Year Nursing",
+    imagesrc: "/images/team/JakeTurnbull_MarketingCoordinator_2N.JPG",
   },
   {
     id: 5,
-    name: "Paige Bain",
-    role: "Fundraising Director",
-    program: "4th Year Health Sciences",
-    imagesrc: "/images/team/Paige_Bain-Fundraising_Director.webp",
+    name: "Elena Rastani",
+    role: "Secretary",
+    program: "2nd Year Life Sciences",
+    imagesrc: "/images/team/ElenaRastani_Secretary_2LS.jpg",
   },
   {
     id: 6,
-    name: "Soha Kar",
-    role: "Outreach Director",
-    program: "3rd Year Health Sciences",
-    imagesrc: "/images/team/Soha_Kar-Outreach_Director.webp",
+    name: "Mya Norman",
+    role: "Finance Director",
+    program: "4th Year Health Sciences",
+    imagesrc: "/images/team/MyaNorman_FinanceDirector_4HS.JPG",
   },
   {
     id: 7,
-    name: "Mathura Manoranjan",
-    role: "Outreach Coordinator",
-    program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/Mathura_Manoranjan-Outreach_Coordinator.webp",
+    name: "Gloria Li",
+    role: "Fundraising Director",
+    program: "4th Year Health Sciences",
+    imagesrc: "/images/team/GloriaLi_FundraisingDirector_4HS.JPG",
   },
-  
   {
     id: 8,
-    name: "Ronin Dos Santos",
-    role: "Outreach Coordinator",
-    program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/Ronin_Dos_Santos-Outreach_Coordinator.webp",
+    name: "Bhaveesha Prem",
+    role: "Fundraising Coordinator",
+    program: "3rd Year Health Sciences",
+    imagesrc: "/images/team/BhaveeshaPrem_FundraisingCoordinator_3HS.jpg",
   },
-
   {
     id: 9,
-    name: "Mathews Antony",
-    role: "Fundraising Director",
-    program: "3rd Year Health Sciences",
-    imagesrc: "/images/team/Mathews_Antony-Fundraising_Director.webp",
+    name: "Lani Ogunkoya",
+    role: "Fundraising Coordinator",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/LaniOgunkoya_FundraisingCoordinator_2HS.JPG",
   },
   {
     id: 10,
-    name: "Fiona Maguire",
-    role: "Conference Director",
-    program: "4th Year Biology",
-    imagesrc: "/images/team/Fiona_Maguire-Conference_Director.webp",
+    name: "Mathura Manoranjan",
+    role: "Outreach Director",
+    program: "3rd Year Health Sciences",
+    imagesrc: "/images/team/MathuraManoranjan_OutreachDirector_3HS.jpg",
   },
   {
     id: 11,
-    name: "Falaq Mansuri",
-    role: "Conference Director",
-    program: "3rd Year Health Sciences",
-    imagesrc: "/images/team/Falaq_Mansuri-Conference_Director.webp",
+    name: "Ramneek Dhillon",
+    role: "Outreach Coordinator",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/RamneekDhillon_OutreachCoordinator_2HS.JPG",
   },
   {
     id: 12,
-    name: "Ishaann Bakirathan",
-    role: "Conference Coordinator",
-    program: "3rd Year Health Sciences",
-    imagesrc: "/images/team/Ishaann_Bakirathan-Conference_Coordinator.webp",
+    name: "Walden Wu",
+    role: "Outreach Coordinator",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/WaldenWu_OutreachCoordinator_2HS.JPG",
   },
   {
     id: 13,
-    name: "Raiya Nerooban",
-    role: "Conference Coordinator",
+    name: "Girish Saini",
+    role: "Conference Director",
     program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/Raiya_Nerooban-Conference_Coordinator.webp",
+    imagesrc: "/images/team/GirishSaini_ConferenceDirector_2HS.JPG",
   },
   {
     id: 14,
-    name: "Ishita Chohan",
-    role: "Socials Co-Director",
-    program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/Ishita_Chohan-Socials_Co-Director.webp",
+    name: "Ishaan Bakirathan",
+    role: "Conference Director",
+    program: "4th Year Health Sciences",
+    imagesrc: "/images/team/Ishaan_Bakirathan_ConferenceDirector_4HS.JPG",
   },
   {
     id: 15,
-    name: "Hope Olaniyan",
-    role: "Socials Co-Director",
-    program: "2nd Year Nursing",
-    imagesrc: "/images/team/Hope_Olaniyan-Socials_Co-Director.webp",
+    name: "Anamika Bimal",
+    role: "Conference Coordinator",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/AnamikaBimal_ConferenceCoordinator_2HS.JPG",
   },
   {
     id: 16,
-    name: "Victoria Yu",
+    name: "Angela Fitzpatrick",
     role: "First Year Representative",
-    program: "1st Year Health Sciences",
-    imagesrc: "/images/team/Victoria_Yu-First_Year_Representative.webp",
+    program: "1st Year Life Sciences",
+    imagesrc: "/images/team/AngelaFitzpatrick_FirstYearRepresentative_1LS.jpg",
   },
   {
     id: 17,
-    name: "Judy Moon",
+    name: "Sienna Singaram",
     role: "First Year Representative",
     program: "1st Year Health Sciences",
-    imagesrc: "/images/team/Judy_Moon-First_Year_Representative.webp",
+    imagesrc: "/images/team/SiennaSingaram_FirstYearRepresentative_1HS.JPG",
   },
 ];
 
@@ -143,7 +139,7 @@ const groupedTeams = {
   ),
 
   admin: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Administrative")
+    p.role.includes("Secretary") || p.role.includes("Finance")
   ),
 
   fundraising: NAME_CARD_DATA.filter(p =>
@@ -156,10 +152,6 @@ const groupedTeams = {
 
   conference: NAME_CARD_DATA.filter(p =>
     p.role.includes("Conference")
-  ),
-
-  socials: NAME_CARD_DATA.filter(p =>
-    p.role.includes("Socials")
   ),
 
   firstYears: NAME_CARD_DATA.filter(p =>
@@ -181,7 +173,6 @@ export function TeamIntro() {
       <TeamSection title="Fundraising Team" members={groupedTeams.fundraising} />
       <TeamSection title="Outreach Team" members={groupedTeams.outreach} />
       <TeamSection title="Conference Team" members={groupedTeams.conference} />
-      <TeamSection title="Socials Team" members={groupedTeams.socials} />
       <TeamSection title="First Year Team" members={groupedTeams.firstYears} />
 
     </section>
@@ -199,24 +190,14 @@ function TeamSection( {title, members}: {title: string;members: (typeof NAME_CAR
       </div>
         <div className="flex flex-wrap gap-15 justify-center pt-10">
             {members.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: index * 0.06,
-                }}
-              >
                 <NameCard
+                  key={member.id}
                   name={member.name}
                   role={member.role}
                   program={member.program}
                   imagesrc={member.imagesrc}
+                  index={index}
                 />
-              </motion.div>
               ))}
         </div>
     </div>

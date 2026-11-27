@@ -3,7 +3,12 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ArrowUpRight, Mail } from "lucide-react"
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
 const INTEREST_FORM = "https://forms.gle/gnctfoax1NyW9FAo9"
