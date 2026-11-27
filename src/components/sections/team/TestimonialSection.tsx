@@ -1,4 +1,3 @@
-
 "use client"
 import Image from "next/image"
 import { useState } from "react"  
@@ -23,7 +22,7 @@ const PRESIDENTS = [
   },
 ];
 
-
+const SHOW_PRESIDENT_QUOTES = false;
 
 export function TestimonialSection() {
 
@@ -43,7 +42,7 @@ export function TestimonialSection() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         >
         <h1 className="text-[0.8rem] font-extrabold uppercase tracking-[0.25em] text-accent text-center">
-            Testimonials
+            This Year&apos;s Team
         </h1>
 
         {/* centered image, then text below */}
@@ -52,7 +51,7 @@ export function TestimonialSection() {
                 <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
                     <Image
                     src="/images/team/IMG_1116.JPG"
-                    alt="Co-Presidents group photo"
+                    alt="Queen's Public Health Brigades team group photo"
                     width={900}
                     height={500}
                     className="object-cover mx-auto"
@@ -60,6 +59,7 @@ export function TestimonialSection() {
                 </div>
             </div>
 
+            {SHOW_PRESIDENT_QUOTES && (
             <div className="max-w-3xl space-y-4">
                 <h2 className="text-2xl font-bold text-foreground/100">
                     Listen to what our presidents have to say. 
@@ -70,9 +70,11 @@ export function TestimonialSection() {
                     Co-President and what being a Co-President means to you!
                 </p>
             </div>
+            )}
         </div>
 
-        {/* testimonials */}
+        {/* testimonials — temporarily hidden */}
+        {SHOW_PRESIDENT_QUOTES && (
         <div className="flex flex-col gap-10">
             {PRESIDENTS.map((p, i) => (
             <div key={p.name}>
@@ -159,6 +161,7 @@ export function TestimonialSection() {
             </div>
             ))}
         </div>
+        )}
     </motion.section>
 
   );

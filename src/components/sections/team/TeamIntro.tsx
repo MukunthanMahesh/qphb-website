@@ -1,6 +1,4 @@
-"use client"
 import { NameCard } from "@/components/ui/NameCard"
-import { motion } from "framer-motion";
 
 const NAME_CARD_DATA = [
   {
@@ -192,24 +190,14 @@ function TeamSection( {title, members}: {title: string;members: (typeof NAME_CAR
       </div>
         <div className="flex flex-wrap gap-15 justify-center pt-10">
             {members.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: index * 0.06,
-                }}
-              >
                 <NameCard
+                  key={member.id}
                   name={member.name}
                   role={member.role}
                   program={member.program}
                   imagesrc={member.imagesrc}
+                  index={index}
                 />
-              </motion.div>
               ))}
         </div>
     </div>
