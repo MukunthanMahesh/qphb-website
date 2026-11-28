@@ -93,18 +93,18 @@ const NAME_CARD_DATA = [
     imagesrc: "/images/team/WaldenWu_OutreachCoordinator_2HS.JPG",
   },
   {
-    id: 13,
-    name: "Girish Saini",
-    role: "Conference Coordinator",
-    program: "2nd Year Health Sciences",
-    imagesrc: "/images/team/GirishSaini_ConferenceDirector_2HS.JPG",
-  },
-  {
     id: 14,
     name: "Ishaann Bakirathan",
     role: "Conference Director",
     program: "4th Year Health Sciences",
     imagesrc: "/images/team/Ishaan_Bakirathan_ConferenceDirector_4HS.JPG",
+  },
+  {
+    id: 13,
+    name: "Girish Saini",
+    role: "Conference Coordinator",
+    program: "2nd Year Health Sciences",
+    imagesrc: "/images/team/GirishSaini_ConferenceDirector_2HS.JPG",
   },
   {
     id: 15,
