@@ -95,7 +95,7 @@ const NAME_CARD_DATA = [
   {
     id: 13,
     name: "Girish Saini",
-    role: "Conference Director",
+    role: "Conference Coordinator",
     program: "2nd Year Health Sciences",
     imagesrc: "/images/team/GirishSaini_ConferenceDirector_2HS.JPG",
   },
